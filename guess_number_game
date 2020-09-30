@@ -1,0 +1,61 @@
+import random
+def speak(str):
+    from win32com.client import Dispatch
+    speak=Dispatch("SAPI.spVoice")
+    speak.Speak(str)
+import time
+
+speak("Please Enter Your Name:....")
+user=input("Please Enter Your Name:....")
+
+speak("You Need To Enter The Starting Number And Ending Number And Guess Between Them That What Is The "
+            "Actual Number")
+print("You Need To Enter The Starting Number And Ending Number And Guess Between Them That What Is The "
+            "Actual Number")
+
+speak("Enter The Starting Number:...")
+first_number=int(input("Enter The First Number:...\n"))
+
+speak("Enter The Ending Number:...")
+second_number=int(input("Enter The Second Number:...\n"))
+
+choice=random.randint(first_number,second_number)
+chance=0
+time.sleep(0.45)
+
+speak("Lets Go!!!!")
+print("Lets Goooo!!!!")
+
+while True:
+    speak("Enter Your Guess!!!")
+    your_guess=int(input("Enter Your Guess:...\n"))
+    if your_guess<choice:
+        speak("HINT...The Actual Number Is Greater Than YourNumber....")
+        print("HINT...The Actual Number Is Greater Than YourNumber....")
+        chance+=1
+    elif your_guess>choice:
+        speak("HINT...The Actual Number Is Smaller Than YourNumber....")
+        print("HINT...The Actual Number Is Smaller Than YourNumber....")
+        chance += 1
+    else:
+        speak("Your Answer Is Absolutely Right........")
+        print("Your Answer Is Absolutely Right........")
+        chance += 1
+        break
+
+time.sleep(0.50)
+if chance<5:
+    speak("Congo!!! You Are Amazing!! You Finished It Very Quickly..... ")
+    print("Congo!!! You Are Amazing!! You Finished It Very Quickly..... ")
+elif chance<10:
+    speak("Well Played..... ")
+    print("Well Played..... ")
+else:
+    speak("You Need To Practise A Lot!!!!")
+    print("You Need To Practise A Lot!!!!")
+
+speak(f"Total Chance Taken By {user} are {chance} ")
+print(f"Total Chance Taken By {user} are {chance} ")
+
+speak("Thank You!!!")
+print("Thank You!!!")
