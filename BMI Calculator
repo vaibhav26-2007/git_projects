@@ -1,0 +1,9 @@
+
+a=("Welcome to BMI calcuator")
+a.center(50)
+
+height=float(input("Enter Your Height In Meter: \n"))
+weight=float(input("Enter Your Weight: \n"))
+
+bmi=round(weight / (height * height), 2)
+print("Your Body Mass Index (BMI) is: ",bmi)
