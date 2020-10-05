@@ -1,0 +1,29 @@
+# writing a prog to identif that given number is a prime number or not
+
+print("this will show that your given number is prime number or not ")
+
+n=int(input("pls enter your number:.....\n"))
+
+flage = 0
+
+for i in range(2,n):
+    if n % i == 0:
+        flage = 1
+if flage == 0:
+    print("it is a prime number")
+else:
+    print("it is not a prime number")
+
+# wap to print all the prine number i to n
+
+n=int(input("Enter the starting number:....."))
+q=int(input("enter the ending number:..."))
+
+for i in range (n,q+1):
+    flage = 0
+    for j in range(2,i):
+        if i % j==0:
+            flage=1
+
+    if flage==0:
+        print("it is a prime number: ",i)
